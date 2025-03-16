@@ -78,7 +78,15 @@ applications:
 
 
   # Tekton Pipelines
-
+  - name: tekton-pipeline
+    enabled: true
+    source: "https://<GIT_SERVER>/<TEAM_NAME>/tech-exercise.git"
+    source_ref: main
+    source_path: tekton
+    values:
+      team: ramyakiran
+      cluster_domain: cluster-v4xjd.v4xjd.sandbox114.opentlc.com
+      git_server: https://github.com/RamyaRaghuveera
 
   # Sonarqube
 
