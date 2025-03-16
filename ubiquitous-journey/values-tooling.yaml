@@ -80,7 +80,7 @@ applications:
   # Tekton Pipelines
   - name: tekton-pipeline
     enabled: true
-    source: "https://<GIT_SERVER>/<TEAM_NAME>/tech-exercise.git"
+    source: "https://github.com/RamyaRaghuveera/tech-exercise.git"
     source_ref: main
     source_path: tekton
     values:
