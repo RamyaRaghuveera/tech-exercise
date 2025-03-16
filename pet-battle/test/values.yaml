@@ -5,5 +5,26 @@ source: "http://nexus:8081/repository/helm-charts/"
 #############
 applications:
   # Keycloak
-  
+  keycloak:
+    name: keycloak
+    enabled: true
+    source: https://github.com/petbattle/pet-battle-infra
+    source_ref: main
+    source_path: keycloak
+    values:
+      app_domain: <CLUSTER_DOMAIN>
   # Pet Battle Apps
+  pet-battle-api:
+    name: pet-battle-api
+    enabled: true
+    source: http://nexus:8081/repository/helm-charts
+    chart_name: pet-battle-api
+    source_ref: 1.2.1
+    values:
+      image_name: pet-battle-api
+      image_version: 1.0.0
+      # ✋ ✋ ADD THIS CONFIG BELOW TO YOUR values.yaml FILE 
+      hpa:
+        enabled: true
+        cpuTarget: 200m
+        memTarget: 300Mi
